@@ -95,6 +95,7 @@
     min-height: 49px;
     font-size: calc(30px - 0.023684211 * (700px - 100vw));
     align-self: center;
+    padding: 0;
   }
   .integration .swiper-pagination-bullet { 
     opacity: 1;

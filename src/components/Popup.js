@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import successIcon from "../images/success.svg";
 import failIcon from "../images/fail.svg";
 
-function Popup({ isPopupOpen, emailStatus, closePopup }) {
+function Popup({ emailStatus, closePopup }) {
   const popupRef = useRef();
   const handleOverlayClick = (evt) => {
     if (evt.target.id === "overlay") {

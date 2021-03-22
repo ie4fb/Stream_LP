@@ -16,6 +16,9 @@ function Footer() {
         <Link className="footer__link" to="/terms">
           Условия
         </Link>
+        <Link className="footer__link" to="/api">
+          Техническая документация
+        </Link>
       </nav>
       <div className="footer__address">
         <p className="footer__address-item footer__address-item_type_bold">

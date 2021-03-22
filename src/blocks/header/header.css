@@ -5,6 +5,8 @@
   padding: 0 5.9% 0 7.6%;
   width: calc(100% - 7.6% - 5.9%);
   height: 101px;
+  min-width: 262px;
+  position: relative;
 }
 .header__logo {
   width: 200px;
@@ -26,6 +28,10 @@
   letter-spacing: 2px;
   color: #2e3c40;
   cursor: pointer;
+  text-decoration: none;
+}
+.header_link_type_main {
+  margin: 0 0 0 auto;
 }
 
 @media screen and (max-width: 1280px) {
