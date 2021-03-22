@@ -1,0 +1,112 @@
+.integration {
+  display: flex;
+  justify-content: center;
+  margin: 127px auto 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+.integration__stages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.integration__strip {
+  position: absolute;
+  width: 83%;
+  top: 267px;
+  left: 20px;
+  height: 0px;
+  border: 1px solid #b7c7cc;
+  z-index: -1;
+}
+.integration__stage {
+  display: flex;
+  flex-direction: column;
+  max-width: 248px;
+  margin: 95px 0 0 0;
+}
+.integration__icon {
+  padding: 3px 0 0 0;
+  border-radius: 50%;
+  background-color: #ff79c7;
+  display: flex;
+  width: 70px;
+  height: 67px;
+  justify-content: center;
+  align-items: center;
+  font-family: "MuseoSansCyrl", helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 0.87;
+  color: #ffffff;
+  margin: 0;
+  outline: 20px solid white;
+}
+@media screen and (max-width: 1280px) {
+  .integration__stage {
+    width: 23%;
+    max-width: 23%;
+  }
+}
+@media screen and (max-width: 1376px) { 
+  .integration {
+    width: calc(100% - 110px);
+  }
+  .integration {
+    margin-left: 55px;
+    margin-right: 55px;
+  }
+}
+
+@media screen and (max-width: 1080px) { 
+  .integration {
+    margin-top: 116px;
+  }
+  .integration__stage {
+    width: 22%
+  }
+  .integration__stage:nth-of-type(2) {
+    min-width: 25%;
+  }
+
+}
+
+@media screen and (max-width: 700px) { 
+  .integration {
+    display: block;
+    margin: 115px 18px 0 18px;
+    width: calc(100% - 36px);
+    min-width: 284px;
+  }
+  .integration__stage {
+    max-width: fit-content;
+    width: calc(100% - 36px);
+    margin: 34px auto 0 auto;
+    padding: 0;
+    height: 340px;
+  }
+  .integration__icon {
+    width: calc(70px - 0.076315789 * (700px - 100vw));
+    height: calc(70px - 0.076315789 * (700px - 100vw));
+    min-width: 49px;
+    min-height: 49px;
+    font-size: calc(30px - 0.023684211 * (700px - 100vw));
+    align-self: center;
+  }
+  .integration .swiper-pagination-bullet { 
+    opacity: 1;
+    background-color: #bbc1c7;
+  }
+  .integration .swiper-pagination-bullet-active {
+    background: #e677ad;
+  }
+
+}
+@media screen and (max-width: 320px) {
+  .integration__icon {
+   font-size: 21px;
+}
+}

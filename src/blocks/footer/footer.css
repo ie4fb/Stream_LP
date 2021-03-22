@@ -1,0 +1,127 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5.9% 0 7.6%;
+  width: calc(100% - 99px - 127px);
+}
+.footer__logo {
+  margin: 60px 0 150px 0;
+  width: 200px;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  margin: 55px 0 0 0;
+}
+.footer__link {
+  font-family: "MuseoSansCyrl", helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 0.75;
+  line-height: 2;
+  color: #ae3cb2;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+}
+.footer__link:hover {
+  opacity: 0.5;
+}
+.footer__link:visited {
+  color: #ae3cb2;
+}
+
+.footer__address {
+  display: grid;
+  grid-template-areas:
+    "city blank"
+    "phone address"
+    "e-mail address";
+  grid-template-rows: repeat(3, 35px);
+  column-gap: 3vw;
+  margin: 52px 0 0 0;
+}
+.footer__address-item {
+  font-family: "MuseoSansCyrl", helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.94;
+  color: #2e3c40;
+  margin: 0;
+}
+.footer__address-item_type_bold {
+  font-weight: 700;
+  grid-area: city;
+}
+.footer__address-item_type_email {
+  text-decoration: underline;
+  color: #c26dc5;
+  font-weight: 700;
+  grid-area: e-mail;
+}
+.footer__address-item_type_phone {
+  grid-area: phone;
+}
+.footer__address-item_type_address {
+  white-space: pre-line;
+  grid-area: address;
+}
+
+@media screen and (max-width: 1280px) {
+    .footer {
+        padding: 0 29px 0 29px;
+        width: calc(100% - 58px);
+    }
+    .footer__address {
+        grid-template-areas:
+        "city address"
+        "phone address"
+        "e-mail address";
+    }
+    .footer__address-item_type_address {
+        max-width: 205px;
+      }
+}
+@media screen and (max-width: 1024px) { 
+    .footer__address-item {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    .footer__address-item {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) { 
+    .footer{
+        flex-direction: column;
+        padding-bottom: 45px;
+    }
+    .footer__logo{
+        display: none;
+    }
+    .footer__links {
+        margin-top: 29px;
+    }
+    .footer__address {
+        margin-top: 35px;
+        grid-template-areas:
+        "city"
+        "phone"
+        "e-mail"
+        "address";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .footer__address-item {
+        margin-top: 0;
+    }
+    .footer__address-item_type_address {
+        margin-top: 40px;
+    }
+   
+}
+
