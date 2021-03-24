@@ -57,7 +57,7 @@ function App() {
   return (
     <Router history={history} basename="/">
       <Switch>
-        <Route exact path="/stream_lp">
+        <Route exact path="/">
           <Header isExtended={true} />
           <main className="content">
             <Lead />
