@@ -58,7 +58,7 @@ function Header({ isExtended }) {
               </Link>
             </>
           ) : (
-            <a className="header__link header_link_type_main" href="/stream_lp">
+            <a className="header__link header_link_type_main" href="/">
               На главную
             </a>
           )}
@@ -108,7 +108,7 @@ function Header({ isExtended }) {
                 </Link>
               </>
             ) : (
-              <a className="header__link" href="/stream_lp">На главную</a>
+              <a className="header__link" href="/">На главную</a>
             )}
           </div>
         </>
