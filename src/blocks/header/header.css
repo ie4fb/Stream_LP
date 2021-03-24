@@ -12,6 +12,9 @@
   width: 200px;
   margin: 10px 0 0 0;
 }
+.header__logo-link {
+  display: flex;
+}
 .header__menu {
   display: flex;
   flex-direction: row;
@@ -29,6 +32,7 @@
   color: #2e3c40;
   cursor: pointer;
   text-decoration: none;
+  display: flex;
 }
 .header_link_type_main {
   margin: 0 0 0 auto;

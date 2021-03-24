@@ -17,12 +17,16 @@ import {
 } from "react-router-dom";
 import useFormWithValidation from "../hooks/useFormWithValidation";
 import { api } from "../utils/api";
+import smoothscroll from "smoothscroll-polyfill";
 
 function App() {
   const [emailStatus, setEmailStatus] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const validation = useFormWithValidation();
   const history = useHistory();
+  
+  //safari compatibility;
+  smoothscroll.polyfill();
 
   const handleRegistrationRequest = (data) => {
     console.log(JSON.stringify(data));

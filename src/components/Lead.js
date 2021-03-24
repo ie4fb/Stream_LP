@@ -30,6 +30,7 @@ function Lead() {
           spy={false}
           smooth={true}
           duration={500}
+          offset={-190}
         >
           Подключиться
         </Link>

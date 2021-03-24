@@ -11,6 +11,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.4.11",
     "web-vitals": "^0.2.4"
   },

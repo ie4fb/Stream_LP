@@ -24,7 +24,7 @@ function Header({ isExtended }) {
 
   return (
     <header className={`header ${isMenuOpen ? "open" : ""}`}>
-      <img className="header__logo" src={logo} alt="Логотип" />
+     <a className="header__logo-link" href="/"><img className="header__logo" src={logo} alt="Логотип" /></a>
       {window.width > 768 && (
         <div className="header__menu">
           {isExtended ? (
@@ -80,6 +80,7 @@ function Header({ isExtended }) {
                   smooth={true}
                   duration={500}
                   onClick={handleMenuButtonClick}
+                  offset={0}
                 >
                   О сервисе
                 </Link>
@@ -90,6 +91,7 @@ function Header({ isExtended }) {
                   smooth={true}
                   duration={500}
                   onClick={handleMenuButtonClick}
+                  offset={-100}
                 >
                   Направления
                 </Link>
@@ -100,6 +102,7 @@ function Header({ isExtended }) {
                   smooth={true}
                   duration={500}
                   onClick={handleMenuButtonClick}
+                  offset={-55}
                 >
                   Регистрация
                 </Link>
