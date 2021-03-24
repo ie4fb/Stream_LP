@@ -8,7 +8,7 @@ import Applicability from "./Applicability";
 import Account from "./Account";
 import Footer from "./Footer";
 import Popup from "./Popup";
-import ApiLinks from './ApiLinks';
+import ApiLinks from "./ApiLinks";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +19,6 @@ import useFormWithValidation from "../hooks/useFormWithValidation";
 import { api } from "../utils/api";
 
 function App() {
-
   const [emailStatus, setEmailStatus] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const validation = useFormWithValidation();
@@ -50,6 +49,7 @@ function App() {
       setIsPopupOpen(false);
     }, 300);
   };
+
   return (
     <Router history={history} basename="/">
       <Switch>
