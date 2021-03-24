@@ -10,6 +10,9 @@
   margin: 60px 0 100px 0;
   width: 200px;
 }
+.footer__logo-link{
+  display: flex;
+}
 .footer__links {
   display: flex;
   flex-direction: column;

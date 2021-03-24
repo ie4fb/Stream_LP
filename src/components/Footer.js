@@ -8,7 +8,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <img className="footer__logo" alt="Логотип" src={logo}></img>
+      <a href="/" className="footer__logo-link"><img className="footer__logo" alt="Логотип" src={logo}></img></a>
       <nav className="footer__links">
         <Link className="footer__link" to="/rules">
           Правила использования
