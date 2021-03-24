@@ -3,7 +3,7 @@ import logo from "../images/stream-header-logo.svg";
 import { Link } from "react-scroll";
 import useWindowSize from "../hooks/useWindowSize";
 
-function Header() {
+function Header({ isExtended }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const window = useWindowSize();
 
@@ -24,36 +24,44 @@ function Header() {
 
   return (
     <header className={`header ${isMenuOpen ? "open" : ""}`}>
-      <img className="header__logo" src={logo} alt="Логотип" />
+     <a className="header__logo-link" href="/"><img className="header__logo" src={logo} alt="Логотип" /></a>
       {window.width > 768 && (
         <div className="header__menu">
-          <Link
-            className="header__link"
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            О сервисе
-          </Link>
-          <Link
-            className="header__link"
-            to="applicability"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Направления
-          </Link>
-          <Link
-            className="header__link"
-            to="account"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Регистрация
-          </Link>
+          {isExtended ? (
+            <>
+              <Link
+                className="header__link"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                О сервисе
+              </Link>
+              <Link
+                className="header__link"
+                to="applicability"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Направления
+              </Link>
+              <Link
+                className="header__link"
+                to="account"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Регистрация
+              </Link>
+            </>
+          ) : (
+            <a className="header__link header_link_type_main" href="/stream_lp">
+              На главную
+            </a>
+          )}
         </div>
       )}
       {window.width <= 768 && (
@@ -63,36 +71,45 @@ function Header() {
             onClick={handleMenuButtonClick}
           ></button>
           <div className="header__burger-menu">
-            <Link
-              className="header__link"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={handleMenuButtonClick}
-            >
-              О сервисе
-            </Link>
-            <Link
-              className="header__link"
-              to="applicability"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={handleMenuButtonClick}
-            >
-              Направления
-            </Link>
-            <Link
-              className="header__link"
-              to="account"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={handleMenuButtonClick}
-            >
-              Регистрация
-            </Link>
+            {isExtended ? (
+              <>
+                <Link
+                  className="header__link"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleMenuButtonClick}
+                  offset={0}
+                >
+                  О сервисе
+                </Link>
+                <Link
+                  className="header__link"
+                  to="applicability"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleMenuButtonClick}
+                  offset={-100}
+                >
+                  Направления
+                </Link>
+                <Link
+                  className="header__link"
+                  to="account"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={handleMenuButtonClick}
+                  offset={-55}
+                >
+                  Регистрация
+                </Link>
+              </>
+            ) : (
+              <a className="header__link" href="/stream_lp">На главную</a>
+            )}
           </div>
         </>
       )}

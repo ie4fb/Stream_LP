@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Lead from "./Lead";
 import Info from "./Info";
@@ -8,6 +8,7 @@ import Applicability from "./Applicability";
 import Account from "./Account";
 import Footer from "./Footer";
 import Popup from "./Popup";
+import ApiLinks from "./ApiLinks";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,8 +17,17 @@ import {
 } from "react-router-dom";
 import useFormWithValidation from "../hooks/useFormWithValidation";
 import { api } from "../utils/api";
+import smoothscroll from "smoothscroll-polyfill";
 
 function App() {
+  const [emailStatus, setEmailStatus] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const validation = useFormWithValidation();
+  const history = useHistory();
+  
+  //safari compatibility;
+  smoothscroll.polyfill();
+
   const handleRegistrationRequest = (data) => {
     console.log(JSON.stringify(data));
     api
@@ -32,22 +42,24 @@ function App() {
         setEmailStatus(false);
       });
   };
-  const [emailStatus, setEmailStatus] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const validation = useFormWithValidation();
-  const history = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const closePopup = (popupRef) => {
     popupRef.current.classList.remove("popup_visible");
     setTimeout(() => {
       setIsPopupOpen(false);
     }, 300);
   };
+
   return (
-    <div className="page">
-      <Router history={history} basename="/">
-        <Switch>
-          <Route exact path="/stream_lp">
-            <Header />
+    <Router history={history} basename="/">
+      <Switch>
+        <Route exact path="/stream_lp">
+          <Header isExtended={true} />
+          <main className="content">
             <Lead />
             <Info />
             <Integration />
@@ -57,18 +69,25 @@ function App() {
               validation={validation}
               submitHandler={handleRegistrationRequest}
             />
-            <Footer />
-            {isPopupOpen && (
-              <Popup
-                isPopupOpen={isPopupOpen}
-                closePopup={closePopup}
-                emailStatus={emailStatus}
-              />
-            )}
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+          </main>
+          <Footer />
+          {isPopupOpen && (
+            <Popup
+              isPopupOpen={isPopupOpen}
+              closePopup={closePopup}
+              emailStatus={emailStatus}
+            />
+          )}
+        </Route>
+        <Route exact path="/api">
+          <Header isExtended={false} />
+          <main className="content">
+            <ApiLinks />
+          </main>
+          <Footer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
