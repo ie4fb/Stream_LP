@@ -29,11 +29,9 @@ function App() {
   smoothscroll.polyfill();
 
   const handleRegistrationRequest = (data) => {
-    console.log(JSON.stringify(data));
     api
       .sendEmail(data)
       .then(() => {
-        console.log("ok");
         setIsPopupOpen(true);
         setEmailStatus(true);
       })

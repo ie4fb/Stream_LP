@@ -10,11 +10,9 @@ function useFormWithValidation() {
     const target = e.target;
     let value = target.value;
     const name = target.name;
-    console.log(prevValue.length, value.l)
     if (target.name === "telephone" && value.length >=prevValue.length) {
       if (value.length === 6) {
         value = value + ')';
-        console.log(value.length);
       } else if (value.length === 10) {
         value = value + '-';
       } else if (value.length === 13) {

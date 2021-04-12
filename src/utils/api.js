@@ -5,7 +5,6 @@ class Api {
     this._baseURL = baseURL;
   }
   _checkResponse(res) {
-      console.log(res)
     if (res.statusText === "Created" ) {
       return res;
     }

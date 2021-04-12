@@ -10,18 +10,21 @@ function Lead() {
     <section className="lead">
       <div className="lead__content-wrapper">
         <h1 className="lead__heading">
-          {window.width > 582?`Принимаем и увеличиваем конверсию оплаты мобильной коммерции`:`Прием платежей МТС`}
+          Принимаем платежи по Мобильной коммерции
         </h1>
         <ul className="lead__list">
           <li className="lead__list-item">
-            <span className="lead__accent">Тарифы от 2%</span>
+            <span className="lead__accent">Удобный и безопасный платеж</span>
           </li>
           <li className="lead__list-item">
-            <span className="lead__accent">Быстрая интеграция по API</span>
+            <span className="lead__accent">Увеличение конверсии оплаты</span>
           </li>
 
           <li className="lead__list-item">
-            <span className="lead__accent">Индивидуальный подход</span>
+            <span className="lead__accent">Простая интеграция по API</span>
+          </li>
+          <li className="lead__list-item">
+            <span className="lead__accent">Тарифы от 2%</span>
           </li>
         </ul>
         <Link

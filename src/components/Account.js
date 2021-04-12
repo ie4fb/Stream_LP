@@ -13,7 +13,6 @@ function Account({ validation, submitHandler }) {
   };
 
   const handleTelInput = (evt) => {
-    console.log(evt.target.value);
     evt.target.value = evt.target.value.replace(/[A-z .,!@#$%&*/]/gim, "");
     handleChange(evt);
   };
